@@ -64,6 +64,7 @@ const JobsTestPage = () => {
                 onDeleteSuccess={handleDeleteSuccess}
                 forCustomer={job.forCustomer}
                 postedBy={job.postedBy}
+                jobBids={job.jobBids}
               />
             </li>
           ))}
