@@ -7,13 +7,14 @@ import JobCardForList from "../components/JobCard";
 interface Job {
   jobName: string;
   jobCost: number;
+  createdAt: string;
   postedBy: string;
   jobLocation: string;
-  jobCompleteByDate: string;
+  jobDeadline: string;
   jobCategory: string;
   jobBids: string;
   _id: string;
-  createdAt: string;
+  jobStatus: string;
   forCustomer: string;
 }
 
@@ -58,13 +59,14 @@ const JobsTestPage = () => {
                 jobLocation={job.jobLocation}
                 jobCost={job.jobCost}
                 createdAt={job.createdAt}
-                jobCompleteByDate="complete by date"
+                jobDeadline="complete by date"
                 jobCategory={job.jobCategory}
                 jobID={job._id}
                 onDeleteSuccess={handleDeleteSuccess}
                 forCustomer={job.forCustomer}
                 postedBy={job.postedBy}
                 jobBids={job.jobBids}
+                jobStatus={job.jobStatus}
               />
             </li>
           ))}

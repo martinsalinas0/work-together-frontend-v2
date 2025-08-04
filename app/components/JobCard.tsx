@@ -4,30 +4,31 @@ import axios from "axios";
 interface MyComponentProps {
   jobName: string;
   jobCost: number;
-  jobLocation: string;
-  jobCompleteByDate: string;
-  jobCategory: string;
-  jobBids?: string;
-  forCustomer: string; //create a customer type
-  onDeleteSuccess?: (id: string) => void;
-  jobID: string;
   createdAt: string;
   postedBy: string;
+  jobLocation: string;
+  jobDeadline: string;
+  jobCategory: string;
+  jobBids?: string;
+  jobID: string;
+  forCustomer: string; //create a customer type
+  jobStatus: string;
+  onDeleteSuccess?: (id: string) => void;
 }
 
 const JobCardForList: React.FC<MyComponentProps> = ({
   jobName,
   jobCost,
-
-  jobLocation,
-  jobCompleteByDate,
-  jobCategory,
-  jobBids,
-  forCustomer,
-  onDeleteSuccess,
-  jobID,
   createdAt,
   postedBy,
+  jobLocation,
+  jobDeadline,
+  jobCategory,
+  jobBids,
+  jobID,
+  forCustomer,
+  jobStatus,
+  onDeleteSuccess,
 }) => {
   const deleteClick = async () => {
     if (confirm(`are you sure you want to delete ${jobName}?`)) {
@@ -55,12 +56,21 @@ const JobCardForList: React.FC<MyComponentProps> = ({
           <span className="font-medium text-gray-900">Price:</span> ${jobCost}
         </p>
         <p>
+          {" "}
+          <p>
+            <span className="font-medium text-gray-900">Posted at:</span>{" "}
+            {createdAt}
+          </p>{" "}
+          <p>
+            <span className="font-medium text-gray-900">Posted by:</span>{" "}
+            {postedBy}
+          </p>
           <span className="font-medium text-gray-900">Address:</span>{" "}
           {jobLocation}
         </p>
         <p>
           <span className="font-medium text-gray-900">Deadline:</span>{" "}
-          {jobCompleteByDate}
+          {jobDeadline}
         </p>
         <p>
           <span className="font-medium text-gray-900">Category:</span>{" "}
@@ -71,16 +81,13 @@ const JobCardForList: React.FC<MyComponentProps> = ({
           {jobBids}
         </p>
         <p>
-          <span className="font-medium text-gray-900">Posted by:</span>{" "}
-          {postedBy}
-        </p>
-        <p>
           <span className="font-medium text-gray-900">Customer:</span>{" "}
           {forCustomer}
         </p>
+
         <p>
-          <span className="font-medium text-gray-900">Posted at:</span>{" "}
-          {createdAt}
+          <span className="font-medium text-gray-900">Status: </span>{" "}
+          {jobStatus}
         </p>
       </div>
 
