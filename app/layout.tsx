@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import "./globals.css";
 import NavBarComponent from "./components/NavBar";
 
-import { Inter } from "next/font/google"; // You can choose any font
+import { Noto_Sans } from "next/font/google"; // You can choose any font
 
-const inter = Inter({
+const notoSans = Noto_Sans({
   subsets: ["latin"],
-  variable: "--font-inter", // optional: for using as a CSS variable
+  weight: ["400", "700"], // Add other weights as needed
+  variable: "--font-noto",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -20,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en" className={notoSans.className}>
       <body>
         <NavBarComponent />
         {children}
