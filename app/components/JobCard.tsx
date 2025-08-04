@@ -45,51 +45,59 @@ const JobCardForList: React.FC<MyComponentProps> = ({
     }
   };
   return (
-    <div className="border-4 p-4 w-72 grid gap-1 bg-stone-200 border-stone-200 shadow-xl rounded-2xl m-4">
-      <h2 className="text-center text-2xl font-bold mb-4">{jobName}</h2>
-      <div className="space-y-2 text-sm">
-        <p>
-          <span className="font-medium">Price: </span> <span>${jobCost}</span>
-        </p>
+    <div className="w-80 bg-white border border-gray-200 rounded-2xl shadow-lg p-6 m-4 transition hover:shadow-xl">
+      <h2 className="text-center text-2xl font-semibold text-gray-800 mb-4 first-letter:uppercase">
+        {jobName}
+      </h2>
 
+      <div className="space-y-3 text-sm text-gray-700">
         <p>
-          <span className="font-medium">Address: </span> {jobLocation}
+          <span className="font-medium text-gray-900">Price:</span> ${jobCost}
         </p>
         <p>
-          <span className="font-medium">Deadline: </span> {jobCompleteByDate}
+          <span className="font-medium text-gray-900">Address:</span>{" "}
+          {jobLocation}
         </p>
         <p>
-          <span className="font-medium">Category </span> {jobCategory}
+          <span className="font-medium text-gray-900">Deadline:</span>{" "}
+          {jobCompleteByDate}
         </p>
         <p>
-          <span className="font-medium"># of bids</span> {jobBids}
+          <span className="font-medium text-gray-900">Category:</span>{" "}
+          {jobCategory}
         </p>
+        <p>
+          <span className="font-medium text-gray-900"># of Bids:</span>{" "}
+          {jobBids}
+        </p>
+        <p>
+          <span className="font-medium text-gray-900">Posted by:</span>{" "}
+          {postedBy}
+        </p>
+        <p>
+          <span className="font-medium text-gray-900">Customer:</span>{" "}
+          {forCustomer}
+        </p>
+        <p>
+          <span className="font-medium text-gray-900">Posted at:</span>{" "}
+          {createdAt}
+        </p>
+      </div>
 
-        <p>
-          <span className="font-medium">person who posted: </span> {postedBy}
-        </p>
-        <p>
-          <span className="font-medium">CustomerName </span> {forCustomer}
-        </p>
-        <p>
-          <span className="font-medium">Posted At: </span> {createdAt}
-        </p>
-
-        <div className="m-2 justify-center flex">
-          <button
-            type="button"
-            className="m-3 p-1 bg-blue-400 rounded hover:bg-blue-700 transition hover:cursor-pointer"
-          >
-            view
-          </button>
-          <button
-            type="button"
-            className="m-3 p-1 bg-red-400 rounded hover:bg-red-700 transition hover:cursor-pointer"
-            onClick={deleteClick}
-          >
-            delete
-          </button>
-        </div>
+      <div className="mt-6 flex justify-center gap-4">
+        <button
+          type="button"
+          className="px-4 py-1.5 text-sm font-medium bg-blue-500 text-white rounded-md hover:bg-blue-600 transition"
+        >
+          View
+        </button>
+        <button
+          type="button"
+          onClick={deleteClick}
+          className="px-4 py-1.5 text-sm font-medium bg-red-500 text-white rounded-md hover:bg-red-600 transition"
+        >
+          Delete
+        </button>
       </div>
     </div>
   );
