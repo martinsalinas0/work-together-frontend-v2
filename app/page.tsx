@@ -1,3 +1,7 @@
+/* The provided code is a functional component named `Home` in a TypeScript React application. This
+component represents the Home page of a website. Here's a breakdown of what the code is doing: */
+/* The code you provided is a functional component in a TypeScript React application. This component
+represents the Home page of a website. Here's a breakdown of what the code is doing: */
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-100">

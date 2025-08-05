@@ -1,3 +1,7 @@
+/* The code provided is a TypeScript React component named `JobsTestPage`. Here's a breakdown of what
+the code does: */
+/* The code you provided is a TypeScript React component called `JobsTestPage`. Here's a breakdown of
+what the code does: */
 "use client";
 
 import React, { useEffect, useState } from "react";
