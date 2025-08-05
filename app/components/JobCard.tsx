@@ -46,48 +46,45 @@ const JobCardForList: React.FC<MyComponentProps> = ({
     }
   };
   return (
-    <div className="w-80 bg-white border border-gray-200 rounded-2xl shadow-lg p-6 m-4 transition hover:shadow-xl">
-      <h2 className="text-center text-2xl font-semibold text-gray-800 mb-4 first-letter:uppercase">
+    <div className="w-full h-[450px] bg-white border border-gray-200 rounded-2xl shadow-lg p-6 flex flex-col">
+      <h2 className="text-center text-2xl font-semibold text-gray-800 mb-4 first-letter:uppercase truncate">
         {jobName}
       </h2>
 
-      <div className="space-y-3 text-sm text-gray-700">
-        <p>
+      <div className="flex-grow space-y-2 text-sm text-gray-700 overflow-hidden">
+        <p className="truncate">
           <span className="font-medium text-gray-900">Price:</span> ${jobCost}
         </p>
-        <p>
-          {" "}
-          <p>
-            <span className="font-medium text-gray-900">Posted at:</span>{" "}
-            {createdAt}
-          </p>{" "}
-          <p>
-            <span className="font-medium text-gray-900">Posted by:</span>{" "}
-            {postedBy}
-          </p>
+        <p className="truncate">
+          <span className="font-medium text-gray-900">Posted at:</span>{" "}
+          {createdAt}
+        </p>
+        <p className="truncate">
+          <span className="font-medium text-gray-900">Posted by:</span>{" "}
+          {postedBy}
+        </p>
+        <p className="truncate">
           <span className="font-medium text-gray-900">Address:</span>{" "}
           {jobLocation}
         </p>
-        <p>
+        <p className="truncate">
           <span className="font-medium text-gray-900">Deadline:</span>{" "}
           {jobDeadline}
         </p>
-        <p>
+        <p className="truncate">
           <span className="font-medium text-gray-900">Category:</span>{" "}
           {jobCategory}
         </p>
-        <p>
+        <p className="truncate">
           <span className="font-medium text-gray-900"># of Bids:</span>{" "}
           {jobBids}
         </p>
-        <p>
+        <p className="truncate">
           <span className="font-medium text-gray-900">Customer:</span>{" "}
           {forCustomer}
         </p>
-
-        <p>
-          <span className="font-medium text-gray-900">Status: </span>{" "}
-          {jobStatus}
+        <p className="truncate">
+          <span className="font-medium text-gray-900">Status:</span> {jobStatus}
         </p>
       </div>
 

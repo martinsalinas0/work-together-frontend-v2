@@ -26,7 +26,6 @@ const JobsTestPage = () => {
     const getJobs = async () => {
       try {
         const response = await axios.get(`http://localhost:8000/api/jobs/all`);
-
         setJobs(response.data?.jobs);
       } catch (error) {
         console.error("Failed to GET from API: ", error);
@@ -36,44 +35,42 @@ const JobsTestPage = () => {
     };
     getJobs();
   }, []);
-  console.log(loading);
+
   const handleDeleteSuccess = (id: string) => {
     setJobs((jobs) => jobs.filter((job) => job._id !== id));
   };
 
-  console.log(jobs);
+  if (loading) {
+    return <div className="p-4 text-gray-500 text-center">Loading jobs...</div>;
+  }
 
   if (jobs.length === 0) {
-    return <div className="p-4 text-gray-500">Loading jobs...</div>;
+    return <div className="p-4 text-gray-700 text-center">No jobs found.</div>;
   }
 
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Jobs</h1>
-      {jobs.length > 0 ? (
-        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 list-none p-0">
-          {jobs.map((job) => (
-            <li key={job._id}>
-              <JobCardForList
-                jobName={job.jobName}
-                jobLocation={job.jobLocation}
-                jobCost={job.jobCost}
-                createdAt={job.createdAt}
-                jobDeadline="complete by date"
-                jobCategory={job.jobCategory}
-                jobID={job._id}
-                onDeleteSuccess={handleDeleteSuccess}
-                forCustomer={job.forCustomer}
-                postedBy={job.postedBy}
-                jobBids={job.jobBids}
-                jobStatus={job.jobStatus}
-              />
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p>No jobs found.</p>
-      )}
+    <div className="max-w-7xl mx-auto py-4 px-4">
+      <h1 className="text-2xl font-bold mb-4 text-center">Jobs</h1>
+      <ul className="grid grid-cols-4 gap-6 list-none p-0">
+        {jobs.map((job) => (
+          <li key={job._id} className="flex justify-center">
+            <JobCardForList
+              jobName={job.jobName}
+              jobLocation={job.jobLocation}
+              jobCost={job.jobCost}
+              createdAt={job.createdAt}
+              jobDeadline={job.jobDeadline}
+              jobCategory={job.jobCategory}
+              jobID={job._id}
+              onDeleteSuccess={handleDeleteSuccess}
+              forCustomer={job.forCustomer}
+              postedBy={job.postedBy}
+              jobBids={job.jobBids}
+              jobStatus={job.jobStatus}
+            />
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
