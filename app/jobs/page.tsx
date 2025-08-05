@@ -4,15 +4,21 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import JobCardForList from "../components/JobCard";
 
+interface JobLocation {
+  street: string;
+  city: string;
+  state: string;
+  zipcode: string | number;
+}
 interface Job {
   jobName: string;
   jobCost: number;
   createdAt: string;
   postedBy: string;
-  jobLocation: string;
+  jobLocation: JobLocation;
   jobDeadline: string;
   jobCategory: string;
-  jobBids: string;
+  jobBids: number;
   _id: string;
   jobStatus: string;
   forCustomer: string;

@@ -1,15 +1,21 @@
 import React from "react";
 import axios from "axios";
 
+interface JobLocation {
+  street: string;
+  city: string;
+  state: string;
+  zipcode: string | number;
+}
 interface MyComponentProps {
   jobName: string;
   jobCost: number;
   createdAt: string;
   postedBy: string;
-  jobLocation: string;
+  jobLocation: JobLocation;
   jobDeadline: string;
   jobCategory: string;
-  jobBids?: string;
+  jobBids?: number;
   jobID: string;
   forCustomer: string; //create a customer type
   jobStatus: string;
@@ -63,10 +69,11 @@ const JobCardForList: React.FC<MyComponentProps> = ({
           <span className="font-medium text-gray-900">Posted by:</span>{" "}
           {postedBy}
         </p>
-        <p className="truncate">
+        <span className="truncate">
           <span className="font-medium text-gray-900">Address:</span>{" "}
-          {jobLocation}
-        </p>
+          <p className="text-xs">{`${jobLocation.street}, ${jobLocation.city},${jobLocation.state} `}</p>
+          <p className="text-xs">{`${jobLocation.zipcode}`}</p>
+        </span>
         <p className="truncate">
           <span className="font-medium text-gray-900">Deadline:</span>{" "}
           {jobDeadline}
@@ -77,7 +84,7 @@ const JobCardForList: React.FC<MyComponentProps> = ({
         </p>
         <p className="truncate">
           <span className="font-medium text-gray-900"># of Bids:</span>{" "}
-          {jobBids}
+          {jobBids ?? 0}
         </p>
         <p className="truncate">
           <span className="font-medium text-gray-900">Customer:</span>{" "}
