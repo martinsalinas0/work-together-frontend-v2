@@ -53,7 +53,10 @@ const JobCardForList: React.FC<MyComponentProps> = ({
   };
   return (
     <div className="w-full h-[450px] bg-white border border-gray-200 rounded-2xl shadow-lg p-6 flex flex-col">
-      <h2 className="text-center text-2xl font-semibold text-gray-800 mb-4 first-letter:uppercase truncate">
+      <h2
+        className="text-center text-2xl font-semibold text-gray-800 mb-4 first-letter:uppercase truncate"
+        title={jobName}
+      >
         {jobName}
       </h2>
 
@@ -62,8 +65,12 @@ const JobCardForList: React.FC<MyComponentProps> = ({
           <span className="font-medium text-gray-900">Price:</span> ${jobCost}
         </p>
         <p className="truncate">
-          <span className="font-medium text-gray-900">Posted at:</span>{" "}
-          {createdAt}
+          Date Listed:{" "}
+          {new Date(createdAt).toLocaleString("en-US", {
+            month: "short",
+            day: "numeric",
+            year: "numeric",
+          })}
         </p>
         <p className="truncate">
           <span className="font-medium text-gray-900">Posted by:</span>{" "}
