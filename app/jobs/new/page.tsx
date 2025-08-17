@@ -1,6 +1,10 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 
 const NewJobPage = () => {
+  const [jobState, setJobState] = useState("");
+
   return (
     <div className="max-w-2xl mx-auto mt-20 p-8 rounded-lg shadow-lg bg-white">
       <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center uppercase">
@@ -52,7 +56,7 @@ const NewJobPage = () => {
               <option value="landscape">Landscaping</option>
               <option value="electric">Electrician</option>
               <option value="remodel">Remodel</option>
-              <option value="misc">Misc.</option>
+              <option value="misc">Other</option>
             </select>
           </div>
 
