@@ -1,7 +1,3 @@
-/* The provided code is a functional component named `Home` in a TypeScript React application. This
-component represents the Home page of a website. Here's a breakdown of what the code is doing: */
-/* The code you provided is a functional component in a TypeScript React application. This component
-represents the Home page of a website. Here's a breakdown of what the code is doing: */
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-100">
@@ -21,7 +17,6 @@ export default function Home() {
           </p>
         </div>
 
-        {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mb-20">
           <button className="relative bg-gradient-to-r from-green-500 to-green-600 text-white font-medium px-8 py-3 rounded-full shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 ease-out">
             Login
@@ -32,7 +27,6 @@ export default function Home() {
           </button>
         </div>
 
-        {/* Feature Highlights */}
         <div className="grid gap-8 md:grid-cols-3 max-w-6xl mx-auto">
           <div className="bg-white/80 backdrop-blur-md rounded-2xl p-6 text-center shadow hover:shadow-lg transition-shadow duration-300">
             <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
