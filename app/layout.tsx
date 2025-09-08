@@ -3,6 +3,7 @@ import "./globals.css";
 import NavBarComponent from "./components/NavBar";
 
 import { Noto_Sans } from "next/font/google"; // You can choose any font
+import FooterComponent from "./components/FooterComponent";
 
 const notoSans = Noto_Sans({
   subsets: ["latin"],
@@ -25,7 +26,9 @@ export default function RootLayout({
     <html lang="en" className={notoSans.className}>
       <body>
         <NavBarComponent />
+
         {children}
+        <FooterComponent />
       </body>
     </html>
   );

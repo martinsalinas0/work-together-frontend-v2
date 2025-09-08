@@ -1,66 +1,80 @@
+import {
+  ArrowRight,
+  LogIn,
+  UserPlus,
+  ClipboardList,
+  FileText,
+  CreditCard,
+} from "lucide-react";
+
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-100">
-      <div className="container mx-auto px-4 py-20">
-        {/* Hero */}
-        <div className="text-center max-w-4xl mx-auto mb-16">
-          <h1 className="text-5xl md:text-7xl font-extrabold bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent leading-tight mb-6 font-sans">
-            HOME PAGE
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 text-gray-900">
+      <div className="container mx-auto px-6 py-24">
+        {/* Hero Section */}
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight mb-6">
+            <span className="bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
+              Easy Work
+            </span>
           </h1>
-          <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-4">
-            Welcome to{" "}
-            <span className="text-blue-600 font-bold">Easy Work</span>
-          </h2>
-          <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-            Connect with contractors to assign and outsource jobs, quote
-            customers, complete them, and invoice—all in one place.
+          <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-10">
+            A modern platform to connect with contractors, assign work, generate
+            quotes, and handle invoicing—all in one professional workflow.
           </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <button className="flex items-center justify-center gap-2 px-8 py-3 rounded-lg bg-gray-900 text-white font-medium shadow hover:bg-gray-800 transition">
+              <LogIn className="w-5 h-5" />
+              Login
+            </button>
+
+            <button className="flex items-center justify-center gap-2 px-8 py-3 rounded-lg border border-gray-300 text-gray-900 font-medium hover:border-gray-400 transition">
+              <UserPlus className="w-5 h-5" />
+              Sign Up
+              <ArrowRight className="w-5 h-5" />
+            </button>
+          </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mb-20">
-          <button className="relative bg-gradient-to-r from-green-500 to-green-600 text-white font-medium px-8 py-3 rounded-full shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 ease-out">
-            Login
-          </button>
-
-          <button className="relative bg-gradient-to-r from-blue-500 to-blue-600 text-white font-medium px-8 py-3 rounded-full shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 ease-out">
-            Sign Up
-          </button>
-        </div>
-
-        <div className="grid gap-8 md:grid-cols-3 max-w-6xl mx-auto">
-          <div className="bg-white/80 backdrop-blur-md rounded-2xl p-6 text-center shadow hover:shadow-lg transition-shadow duration-300">
-            <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <div className="w-6 h-6 bg-blue-500 rounded-sm"></div>
+        {/* Features Section */}
+        <div className="grid gap-10 md:grid-cols-3 max-w-6xl mx-auto">
+          {/* Feature 1 */}
+          <div className="p-8 bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition">
+            <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-6">
+              <ClipboardList className="w-6 h-6 text-gray-800" />
             </div>
-            <h3 className="text-lg font-semibold text-gray-800 mb-2">
-              Easy Assignment
+            <h3 className="text-lg font-semibold mb-2">
+              Streamlined Assignment
             </h3>
-            <p className="text-sm text-gray-600">
-              Submit competitive bids quickly and efficiently.
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Assign and manage jobs effortlessly with a clean, centralized
+              system.
             </p>
           </div>
 
-          <div className="bg-white/80 backdrop-blur-md rounded-2xl p-6 text-center shadow hover:shadow-lg transition-shadow duration-300">
-            <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <div className="w-6 h-6 bg-green-500 rounded-sm"></div>
+          {/* Feature 2 */}
+          <div className="p-8 bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition">
+            <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-6">
+              <FileText className="w-6 h-6 text-gray-800" />
             </div>
-            <h3 className="text-lg font-semibold text-gray-800 mb-2">
-              Smart Quoting
-            </h3>
-            <p className="text-sm text-gray-600">
-              Generate professional quotes for your customers.
+            <h3 className="text-lg font-semibold mb-2">Professional Quotes</h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Generate polished quotes that help you win more clients and build
+              trust.
             </p>
           </div>
 
-          <div className="bg-white/80 backdrop-blur-md rounded-2xl p-6 text-center shadow hover:shadow-lg transition-shadow duration-300">
-            <div className="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <div className="w-6 h-6 bg-purple-500 rounded-sm"></div>
+          {/* Feature 3 */}
+          <div className="p-8 bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition">
+            <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-6">
+              <CreditCard className="w-6 h-6 text-gray-800" />
             </div>
-            <h3 className="text-lg font-semibold text-gray-800 mb-2">
-              Simple Invoicing
-            </h3>
-            <p className="text-sm text-gray-600">
-              Handle payments and invoicing seamlessly.
+            <h3 className="text-lg font-semibold mb-2">Seamless Invoicing</h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Handle invoices and payments without friction, all in one
+              dashboard.
             </p>
           </div>
         </div>
