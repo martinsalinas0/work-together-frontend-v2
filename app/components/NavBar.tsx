@@ -7,7 +7,7 @@ const NavBarComponent = () => {
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo / Brand */}
         <div className="text-xl font-bold tracking-tight text-gray-900">
-          <Link href="/">EasyWork</Link>
+          <Link href="/">ProsFora</Link>
         </div>
 
         {/* Navigation Links */}
@@ -17,6 +17,12 @@ const NavBarComponent = () => {
             className="text-sm font-medium text-gray-700 hover:text-gray-900 transition"
           >
             Home
+          </Link>
+          <Link
+            href="/dashboard"
+            className="text-sm font-medium text-gray-700 hover:text-gray-900 transition"
+          >
+            Dashboard
           </Link>
           <Link
             href="/jobs"
@@ -37,7 +43,6 @@ const NavBarComponent = () => {
             Jobs Test
           </Link>
         </div>
-        
 
         {/* Actions */}
         <div className="flex items-center space-x-6">

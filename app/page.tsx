@@ -11,11 +11,10 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 text-gray-900">
       <div className="container mx-auto px-6 py-24">
-        {/* Hero Section */}
         <div className="text-center max-w-3xl mx-auto mb-20">
           <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight mb-6">
             <span className="bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
-              Easy Work
+              ProsFora
             </span>
           </h1>
           <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-10">
@@ -23,7 +22,6 @@ export default function Home() {
             quotes, and handle invoicing—all in one professional workflow.
           </p>
 
-          {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <button className="flex items-center justify-center gap-2 px-8 py-3 rounded-lg bg-gray-900 text-white font-medium shadow hover:bg-gray-800 transition">
               <LogIn className="w-5 h-5" />
@@ -38,9 +36,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Features Section */}
         <div className="grid gap-10 md:grid-cols-3 max-w-6xl mx-auto">
-          {/* Feature 1 */}
           <div className="p-8 bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition">
             <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-6">
               <ClipboardList className="w-6 h-6 text-gray-800" />
@@ -54,7 +50,6 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Feature 2 */}
           <div className="p-8 bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition">
             <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-6">
               <FileText className="w-6 h-6 text-gray-800" />
@@ -66,7 +61,6 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Feature 3 */}
           <div className="p-8 bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition">
             <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-6">
               <CreditCard className="w-6 h-6 text-gray-800" />

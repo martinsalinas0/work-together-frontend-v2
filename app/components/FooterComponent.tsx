@@ -23,7 +23,7 @@ const FooterComponent = () => {
                 href="/"
                 className="hover:text-orange-300 transition-colors"
               >
-                Home   
+                Home
               </Link>
             </li>
             <li>
@@ -56,9 +56,9 @@ const FooterComponent = () => {
         {/* Contact */}
         <div>
           <h3 className="text-lg font-semibold text-white mb-3">Contact</h3>
-          <p className="text-sm text-gray-400">support@worktogether.com</p>
+          <p className="text-sm text-gray-400">support@prossfora.com</p>
           <p className="text-sm text-gray-400 mt-1">
-            © {new Date().getFullYear()} WorkTogether. All rights reserved.
+            © {new Date().getFullYear()} ProssFora. All rights reserved.
           </p>
         </div>
       </div>
