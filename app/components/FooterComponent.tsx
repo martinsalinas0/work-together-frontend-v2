@@ -23,7 +23,7 @@ const FooterComponent = () => {
                 href="/"
                 className="hover:text-orange-300 transition-colors"
               >
-                Home
+                Home   
               </Link>
             </li>
             <li>
