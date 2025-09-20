@@ -7,13 +7,13 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import JobCardForList from "../components/JobCard";
 
-interface JobLocation {
+export interface JobLocation {
   street: string;
   city: string;
   state: string;
   zipcode: string | number;
 }
-interface Job {
+export interface Job {
   jobName: string;
   jobCost: number;
   createdAt: string;
