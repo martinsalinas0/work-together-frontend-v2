@@ -18,6 +18,8 @@ interface JobFormData {
   forCustomer: string;
   jobDescription: string;
   jobNotes?: string;
+  jobStatus: string;
+  jobBids: number;
 }
 
 const AddJobForm: React.FC = () => {
@@ -31,6 +33,8 @@ const AddJobForm: React.FC = () => {
     forCustomer: "",
     jobDescription: "",
     jobNotes: "",
+    jobStatus: "New Job",
+    jobBids: 1,
   });
 
   const handleChange = (
@@ -75,15 +79,23 @@ const AddJobForm: React.FC = () => {
           forCustomer: "",
           jobDescription: "",
           jobNotes: "",
+          jobStatus: "new Job",
+          jobBids: 1,
         });
       } else {
         alert(`❌ Error: ${res.data.message}`);
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error(err);
-      alert(
-        `⚠️ Failed to create job: ${err.response?.data?.message || err.message}`
-      );
+      if (axios.isAxiosError(err)) {
+        alert(
+          `⚠️ Failed to create job: ${err.response?.data?.message || err.message}`
+        );
+      } else if (err instanceof Error) {
+        alert(`⚠️ Failed to create job: ${err.message}`);
+      } else {
+        alert("⚠️ Failed to create job: Unknown error");
+      }
     }
   };
 
