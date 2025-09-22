@@ -5,12 +5,12 @@ const NavBarComponent = () => {
   return (
     <nav className="w-full border-b border-gray-200 bg-white shadow-sm">
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo / Brand */}
+        
         <div className="text-xl font-bold tracking-tight text-gray-900">
           <Link href="/">Prossfora</Link>
         </div>
 
-        {/* Navigation Links */}
+        
         <div className="hidden md:flex items-center space-x-8">
           <Link
             href="/"
@@ -44,7 +44,6 @@ const NavBarComponent = () => {
           </Link>
         </div>
 
-        {/* Actions */}
         <div className="flex items-center space-x-6">
           <Link
             href="/jobs/new"

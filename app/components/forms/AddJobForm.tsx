@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 interface JobFormData {
   jobName: string;
@@ -36,6 +37,8 @@ const AddJobForm: React.FC = () => {
     jobStatus: "New Job",
     jobBids: 1,
   });
+
+  const router = useRouter();
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -89,7 +92,9 @@ const AddJobForm: React.FC = () => {
       console.error(err);
       if (axios.isAxiosError(err)) {
         alert(
-          `⚠️ Failed to create job: ${err.response?.data?.message || err.message}`
+          `⚠️ Failed to create job: ${
+            err.response?.data?.message || err.message
+          }`
         );
       } else if (err instanceof Error) {
         alert(`⚠️ Failed to create job: ${err.message}`);
@@ -97,6 +102,7 @@ const AddJobForm: React.FC = () => {
         alert("⚠️ Failed to create job: Unknown error");
       }
     }
+    router.push("/jobs");
   };
 
   return (
@@ -194,7 +200,6 @@ const AddJobForm: React.FC = () => {
         />
       </fieldset>
 
-      {/* Job Deadline */}
       <div>
         <label className="block text-sm font-medium text-gray-700">
           Deadline
@@ -209,7 +214,6 @@ const AddJobForm: React.FC = () => {
         />
       </div>
 
-      {/* Job Category */}
       <div>
         <label className="block text-sm font-medium text-gray-700">
           Category
@@ -229,7 +233,6 @@ const AddJobForm: React.FC = () => {
         </select>
       </div>
 
-      {/* For Customer */}
       <div>
         <label className="block text-sm font-medium text-gray-700">
           For Customer
@@ -244,7 +247,6 @@ const AddJobForm: React.FC = () => {
         />
       </div>
 
-      {/* Job Description */}
       <div>
         <label className="block text-sm font-medium text-gray-700">
           Description
@@ -259,7 +261,6 @@ const AddJobForm: React.FC = () => {
         />
       </div>
 
-      {/* Job Notes */}
       <div>
         <label className="block text-sm font-medium text-gray-700">Notes</label>
         <textarea
@@ -271,7 +272,6 @@ const AddJobForm: React.FC = () => {
         />
       </div>
 
-      {/* Submit */}
       <button
         type="submit"
         className="w-full rounded-lg bg-blue-600 px-4 py-2 font-semibold text-white hover:bg-blue-700 transition"
