@@ -7,7 +7,7 @@ const NavBarComponent = () => {
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo / Brand */}
         <div className="text-xl font-bold tracking-tight text-gray-900">
-          <Link href="/">ProsFora</Link>
+          <Link href="/">Prossfora</Link>
         </div>
 
         {/* Navigation Links */}
