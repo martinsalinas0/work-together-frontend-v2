@@ -20,7 +20,7 @@ const FooterComponent = () => {
           <ul className="space-y-2 text-sm">
             <li>
               <Link
-                href="/"
+                href="/home"
                 className="hover:text-orange-300 transition-colors"
               >
                 Home
@@ -28,8 +28,16 @@ const FooterComponent = () => {
             </li>
             <li>
               <Link
-                href="/jobs"
+                href="/welcome"
                 className="hover:text-orange-300 transition-colors"
+              >
+                Welcome
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/jobs"
+                className="hover:text-orange-300 transition-colors" 
               >
                 Jobs
               </Link>

@@ -13,7 +13,7 @@ const NavBarComponent = () => {
         
         <div className="hidden md:flex items-center space-x-8">
           <Link
-            href="/"
+            href="/home"
             className="text-sm font-medium text-gray-700 hover:text-gray-900 transition"
           >
             Home
