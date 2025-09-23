@@ -1,5 +1,5 @@
 import React from "react";
-import ButtonWhite from "../components/ui/ButtonWhite";
+
 import Link from "next/link";
 
 const LoginPage = () => {
