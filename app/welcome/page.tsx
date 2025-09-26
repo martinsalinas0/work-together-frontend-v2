@@ -6,6 +6,7 @@ import {
   FileText,
   CreditCard,
 } from "lucide-react";
+import Link from "next/link";
 
 export default function LandPage() {
   return (
@@ -25,7 +26,7 @@ export default function LandPage() {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <button className="flex items-center justify-center gap-2 px-8 py-3 rounded-lg bg-gray-900 text-white font-medium shadow hover:bg-gray-800 transition">
               <LogIn className="w-5 h-5" />
-              Login
+              <Link href="/login">Login</Link>
             </button>
 
             <button className="flex items-center justify-center gap-2 px-8 py-3 rounded-lg border border-gray-300 text-gray-900 font-medium hover:border-gray-400 transition">

@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import Link from "next/link";
 
 interface JobLocation {
   street: string;
@@ -105,16 +106,19 @@ const JobCardForList: React.FC<MyComponentProps> = ({
       <div className="mt-6 flex justify-center gap-4">
         <button
           type="button"
-          className="px-4 py-1.5 text-sm font-medium bg-blue-500 text-white rounded-md hover:bg-blue-600 transition"
+          className="px-4 py-1.5 text-sm font-medium bg-blue-500 text-white rounded-md hover:bg-blue-600 hover:cursor-pointer transition"
         >
-          View
+          details
         </button>
         <button
           type="button"
           onClick={deleteClick}
           className="px-4 py-1.5 text-sm font-medium bg-red-500 text-white rounded-md hover:bg-red-600 transition"
         >
-          Delete
+          DELETE
+        </button>
+        <button>
+          <Link href="job/edit"> edit</Link>
         </button>
       </div>
     </div>
